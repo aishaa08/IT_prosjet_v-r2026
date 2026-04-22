@@ -12,7 +12,7 @@ def get_data():
         )
     
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM system_status ORDER BY created_at DESC LIMIT 10")
+    cursor.execute("SELECT * FROM system_status ORDER BY created_at DESC")
     data = cursor.fetchall()
     conn.close()
     return data
