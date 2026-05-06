@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server Monitor</title>
+    <meta http-equiv="refresh" content="60">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
     <script src="{{url_for('static', filename='script.js')}}"></script>
 </head>
@@ -22,7 +23,7 @@
         {% for row in data %}
         <tr>
             <td>{{ row[0] }}</td>
-            <td>{{ row[1] }}</td>
+            <td style="color: {% if row[1] > 40 %}red{% else %}white{% endif %}">{{ row[1] }}</td>
             <td>{{ row[2] }}</td>
             <td>{{ row[3] }}</td>
         </tr>
