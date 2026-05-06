@@ -1,7 +1,9 @@
 from flask import Flask, render_template
 import mysql.connector
+import socket
 
 app = Flask(__name__)
+
 
 def get_data():
     conn = mysql.connector.connect(
@@ -9,6 +11,7 @@ def get_data():
         user="root",
         password="PASSORD123",
         database="server_monitor"
+       
         )
     
     cursor = conn.cursor()
@@ -20,7 +23,8 @@ def get_data():
 @app.route("/")
 def index():
     data = get_data()
-    return render_template("index.html", data=data)
+    server_navn= socket.gethostname()
+    return render_template("index.html", data=data, server_navn=server_navn)
 
 @app.route("/ansatte")
 def ansatte():
@@ -39,3 +43,5 @@ def ansatte():
 
 if __name__=="__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
+
+    
