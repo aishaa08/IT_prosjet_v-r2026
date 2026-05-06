@@ -47,5 +47,19 @@ tr:hover {
 }
 
 #vis {
+    margin-top: 30px;
+    text-align: center;
+}
+button {
     background-color: #ff69b4;
+    color: #1a1a2e;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff1493;
 }
