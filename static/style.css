@@ -45,3 +45,7 @@ td {
 tr:hover {
     background-color: #2a2a4a;
 }
+
+#vis {
+    background-color: #ff69b4;
+}
